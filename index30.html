@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 30</title>
+</head>
+
+<body>
+  <script>
+    let mushroomColor = prompt('Укажите цвет гриба (белый, желтый, красный или коричневый).').trim().replace(/\s+/g, '').toLowerCase();
+    while (mushroomColor != 'белый' && mushroomColor != 'желтый' && mushroomColor != 'красный' && mushroomColor != 'коричневый' && mushroomColor != 'жёлтый') {
+      alert('Цвет введен некорретно!');
+      mushroomColor = prompt('Укажите цвет гриба (белый, желтый, красный или коричневый.)').trim().replace(/\s+/g, '').toLowerCase();
+    }
+    let mushroomSkirt = confirm('У гриба есть юбка? (да или нет)');
+
+    switch (mushroomColor) {
+      case 'белый':
+        if (mushroomSkirt == false)
+          alert('Вы нашли белый гриб');
+        else
+          alert('С грибами надо быть внимательными!')
+        break;
+
+      case 'красный':
+        if (mushroomSkirt == true)
+          alert('А не мухомор ли это?');
+        else
+          alert('Может это подосиновик?');
+        break;
+
+      default:
+        alert('С грибами надо быть внимательными!');
+        break;
+    }
+  </script>
+</body>
+
+</html>

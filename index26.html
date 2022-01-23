@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Пример 26</title>
+	</head>
+	<body>
+     <script>
+       let max = Number.MAX_SAFE_INTEGER;
+       let n = prompt('Введите число n: ');
+       let z = 1;
+       
+       if (Number(n) > max)
+       alert('Введено слишком большое число');
+
+       while (!isFinite(n)) {
+         alert('Допускается ввод только цифр');
+         n = prompt('Введите число n: ');
+        }
+        while (+n < 0) {
+        alert('Допускается ввод только положительных чисел');
+        n = prompt('Введите число n:');
+      }
+        while (!Number.isInteger(+n)) {
+        alert('Допускается ввод только целых чисел');
+        n = prompt('Введите число n:');
+      }
+     
+      if (n > 1) {
+        let i = 2;
+        do {
+          z = z * i;
+          i++;
+        } while (i <= +n);
+      }
+        alert('Факториал числа ' + n + ' равен ' + z);
+
+    </script>
+    </body>
+    
+    </html> 

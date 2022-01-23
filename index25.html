@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 25</title>
+</head>
+
+<body>
+ <script>
+    let max = Number.MAX_SAFE_INTEGER;  
+    let x = prompt('Введите число x: ', '');
+
+    if (Number(x) > max)
+    alert('Введено слишком большое число');
+       
+    while (!isFinite(x)) {
+    alert('Допускается ввод только цифр');
+  }
+
+    let y = prompt('Введите число y: ', '');
+
+    if (Number(y) > max)
+    alert('Введено слишком большое число');
+    
+    while (!isFinite(y)) {
+    alert('Допускается ввод только цифр');
+  }
+  
+    let z = +x;
+    let i = 2;
+
+      if (x != 0 && +y == 0)
+      z = 1;
+
+      if (+x == 0 && +y == 0)
+      z = 1;
+  
+      if (!Number.isInteger(+y) && +x > 0)
+      z = Math.pow(x, y);
+
+        
+      if (Number.isInteger(+y) && +y > 0) {
+        while (i <= y) {
+        z = z * x;
+        i++;
+      }
+    }
+      
+      if (Number.isInteger(+y) && +y < 0) {
+        while (i <= Math.abs(y)) {
+        z = z * x;
+        i++;
+      }
+        if (z != Infinity)
+        z = 1 / z;
+      }
+
+        if (+x == 0 && +y < 0)
+          alert('Ноль не возводится в отрицательную степень')
+        else
+          alert('Число ' + x + ' в степени ' + y + ' равно ' + z);
+      </script>
+</body>
+</html>
