@@ -13,8 +13,10 @@
        let n = prompt('Введите число n: ').trim().replace(/\s+/g, '');
        let z = 1;
        
-       if (Number(n) > max || n.length == 0)
-       alert('Введено слишком большое число либо ничего не введено');
+       while(Number(n) > max || n.length == 0){
+         alert('Введено слишком большое число либо ничего не введено');
+         n = prompt('Введите число n: ').trim().replace(/\s+/g, '');
+       }
 
        while (!isFinite(n)) {
          alert('Допускается ввод только цифр');
