@@ -10,23 +10,23 @@
 	<body>
      <script>
        let max = Number.MAX_SAFE_INTEGER;
-       let n = prompt('Введите число n: ');
+       let n = prompt('Введите число n: ').trim().replace(/\s+/g, '');
        let z = 1;
        
-       if (Number(n) > max)
-       alert('Введено слишком большое число');
+       if (Number(n) > max || n.length == 0)
+       alert('Введено слишком большое число либо ничего не введено');
 
        while (!isFinite(n)) {
          alert('Допускается ввод только цифр');
-         n = prompt('Введите число n: ');
+         n = prompt('Введите число n: ').trim().replace(/\s+/g, '');
         }
         while (+n < 0) {
         alert('Допускается ввод только положительных чисел');
-        n = prompt('Введите число n:');
+        n = prompt('Введите число n:').trim().replace(/\s+/g, '');
       }
         while (!Number.isInteger(+n)) {
         alert('Допускается ввод только целых чисел');
-        n = prompt('Введите число n:');
+        n = prompt('Введите число n:').trim().replace(/\s+/g, '');
       }
      
       if (n > 1) {

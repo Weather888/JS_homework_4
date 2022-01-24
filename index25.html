@@ -11,22 +11,28 @@
 <body>
  <script>
     let max = Number.MAX_SAFE_INTEGER;  
-    let x = prompt('Введите число x: ', '');
+    let x = prompt('Введите число x: ', '').trim().replace(/\s+/g, '');
 
-    if (Number(x) > max)
-    alert('Введено слишком большое число');
-       
+    while (Number(x) > max || x.length == 0){
+    alert('Введено слишком большое число или ничего не введено');
+    x = prompt('Введите число x:').trim().replace(/\s+/g, '');
+    } 
+
     while (!isFinite(x)) {
     alert('Допускается ввод только цифр');
+    x = prompt('Введите число x:').trim().replace(/\s+/g, '');  
   }
 
-    let y = prompt('Введите число y: ', '');
-
-    if (Number(y) > max)
-    alert('Введено слишком большое число');
+    let y = prompt('Введите число y: ', '').trim().replace(/\s+/g, '');
+    
+    while (Number(y) > max || y.length == 0) {
+    alert('Введено слишком большое число или ничего не введено');
+    y = prompt('Введите число y:').trim().replace(/\s+/g, '');
+    } 
     
     while (!isFinite(y)) {
     alert('Допускается ввод только цифр');
+    y = prompt('Введите число y:').trim().replace(/\s+/g, '');
   }
   
     let z = +x;
@@ -60,8 +66,10 @@
 
         if (+x == 0 && +y < 0)
           alert('Ноль не возводится в отрицательную степень')
-        else
-          alert('Число ' + x + ' в степени ' + y + ' равно ' + z);
+          else if (+x < 0 && !Number.isInteger(+y))
+            alert('Отрицательные числа в дробную степень возвести нельзя!')
+              else
+              alert('Число ' + x + ' в степени ' + y + ' равно ' + z);
       </script>
 </body>
 </html>
