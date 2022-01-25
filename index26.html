@@ -9,11 +9,11 @@
 	</head>
 	<body>
      <script>
-       let max = Number.MAX_SAFE_INTEGER;
+      
        let n = prompt('Введите число n: ').trim().replace(/\s+/g, '');
        let z = 1;
        
-       while(Number(n) > max || n.length == 0){
+       while(n.length > 7 || n.length == 0){
          alert('Введено слишком большое число либо ничего не введено');
          n = prompt('Введите число n: ').trim().replace(/\s+/g, '');
        }
@@ -38,7 +38,12 @@
           i++;
         } while (i <= +n);
       }
-        alert('Факториал числа ' + n + ' равен ' + z);
+      
+        if (z == Infinity)
+          alert('Слишком большой результат. Отобразить не представляется возможным.')
+        else
+          alert('Факториал числа ' + n + ' равен ' + z);
+
 
     </script>
     </body>

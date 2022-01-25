@@ -13,7 +13,7 @@
     let max = Number.MAX_SAFE_INTEGER;  
     let x = prompt('Введите число x: ', '').trim().replace(/\s+/g, '');
 
-    while (Number(x) > max || x.length == 0){
+    while (x.length > 7 || x.length == 0){
     alert('Введено слишком большое число или ничего не введено');
     x = prompt('Введите число x:').trim().replace(/\s+/g, '');
     } 
@@ -25,7 +25,7 @@
 
     let y = prompt('Введите число y: ', '').trim().replace(/\s+/g, '');
     
-    while (Number(y) > max || y.length == 0) {
+    while (y.length > 7 || y.length == 0) {
     alert('Введено слишком большое число или ничего не введено');
     y = prompt('Введите число y:').trim().replace(/\s+/g, '');
     } 
@@ -68,6 +68,8 @@
           alert('Ноль не возводится в отрицательную степень')
           else if (+x < 0 && !Number.isInteger(+y))
             alert('Отрицательные числа в дробную степень возвести нельзя!')
+            else if (z == Infinity)
+            alert('Слишком большой результат. Отобразить не представляется возможным.')
               else
               alert('Число ' + x + ' в степени ' + y + ' равно ' + z);
       </script>
